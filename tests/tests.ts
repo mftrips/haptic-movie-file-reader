@@ -63,11 +63,11 @@ const vorzeMessageArray: VorzeCommand[] = [
 ];
 
 const funscriptMessageArray: FunscriptCommand[] = [
-  new FunscriptCommand(677777, 0),
-  new FunscriptCommand(679112, 10),
-  new FunscriptCommand(679579, 0),
-  new FunscriptCommand(681081, 0),
-  new FunscriptCommand(682916, 10),
+  new FunscriptCommand(677777, [0]),
+  new FunscriptCommand(679112, [10]),
+  new FunscriptCommand(679579, [0]),
+  new FunscriptCommand(681081, [0]),
+  new FunscriptCommand(682916, [10]),
 ];
 
 describe("Message", () => {
@@ -122,7 +122,7 @@ describe("Message", () => {
        const parser: HapticFileHandler = p;
        expect(parser.CommandLength).to.equal(5);
        expect(parser.Commands).to.deep.equal(funscriptMessageArray);
-       expect(parser.GetValueNearestTime(679500)).to.deep.equal(new FunscriptCommand(679112, 10));
+       expect(parser.GetValueNearestTime(679500)).to.deep.equal(new FunscriptCommand(679112, [10]));
      });
 
   it("Returns a valid object when loading from a file",
@@ -134,7 +134,7 @@ describe("Message", () => {
          const parser: HapticFileHandler = p;
          expect(parser.CommandLength).to.equal(5);
          expect(parser.Commands).to.deep.equal(funscriptMessageArray);
-         expect(parser.GetValueNearestTime(679500)).to.deep.equal(new FunscriptCommand(679112, 10));
+         expect(parser.GetValueNearestTime(679500)).to.deep.equal(new FunscriptCommand(679112, [10]));
        });
      });
 

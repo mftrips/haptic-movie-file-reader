@@ -50,7 +50,7 @@ export class LovenseMaxCommand extends HapticCommand {
 
 export class FunscriptCommand extends HapticCommand {
   constructor(time: number,
-              private _position: number) {
+              private _position: number[]) {
     super(time);
   }
 
